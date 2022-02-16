@@ -14,6 +14,7 @@ xpos    = $55   ; word
 set_graphics_mode   = $ef9c
 plot                = $f1d8
 
+; xoffsets in reverse (X = 2, 1, 0)
 xoffsets  = 6               ; all three default to zero
 _xoffset3 = xoffsets
 _xoffset2 = xoffsets+1
@@ -40,10 +41,10 @@ main
 
 
 loop
-    lda #$20
+    lda #$20            ; one lsr before it gets used: $10, $08,$04
     sta val
 
-    sta color
+    sta color           ; only the 2 least significant bits are significant :)
 
 
 ; layer 1-3 merged!     (post-compo)
