@@ -100,20 +100,13 @@ nodraw
     inc _xoffset        ; scroll layer 1
     inc _xoffset
 
-;    inc _yoffset
-;    inc _yoffset
-
     inc _xoffset2       ; scroll layer 2
-
-;    inc _yoffset2
 
     lda _xoffset2
     and #1
     bne no3
 
     inc _xoffset3       ; scroll layer 3, too!!
-
-;    inc _yoffset3
 
 no3
     lda 106
@@ -223,11 +216,6 @@ riff        ; plays in reverse
     dta 19, 26, 31, 40
     dta 19, 17, 23, 35
 
-;cnt
-;    dta 7
-;    dta 11
-;    dta 15
-
 ; also saves three bytes!
 ;cnt = $05       ; value is $07
 cnt = $17       ; value is $0b
@@ -235,11 +223,4 @@ cnt = $17       ; value is $0b
 
 colors
     dta $0f, $07, $73       ; white, gray, blue
-
-;    dta $bf, $27, $73      ; greenish, brownish, blue
-;    dta $0f, $07, $75       ; white, gray, blue2
-
-
-
-
 
